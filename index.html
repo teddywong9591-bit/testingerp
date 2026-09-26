@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Resource Planning (ERP) System</title>
+    <!-- Lucide Icons for Professional UI -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <i data-lucide="box"></i>
+                <span>Capital ERP</span>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="menu-item active"><a href="#"><i data-lucide="layout-dashboard"></i> Dashboard</a></li>
+                <li class="menu-item"><a href="#"><i data-lucide="fuel"></i> Fleet & Fuel</a></li>
+                <li class="menu-item"><a href="#"><i data-lucide="warehouse"></i> Warehouse</a></li>
+                <li class="menu-item"><a href="#"><i data-lucide="file-text"></i> Requisitions</a></li>
+                <li class="menu-item"><a href="#"><i data-lucide="users"></i> HR & Leave</a></li>
+                <li class="menu-item"><a href="#"><i data-lucide="bar-chart-3"></i> Reports</a></li>
+                <li class="menu-item"><a href="#"><i data-lucide="settings"></i> Settings</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Wrapper -->
+        <div class="main-wrapper">
+            <!-- Top Header -->
+            <header class="top-header">
+                <div class="header-search">
+                    <i data-lucide="search"></i>
+                    <input type="text" placeholder="Search modules, orders, items...">
+                </div>
+                <div class="header-actions">
+                    <button class="icon-btn"><i data-lucide="bell"></i></button>
+                    <div class="user-profile">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100" alt="User">
+                        <span>Admin User</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <main class="content-area">
+                <div class="page-header">
+                    <h1>Dashboard Overview</h1>
+                    <button class="primary-btn"><i data-lucide="plus"></i> Add New Record</button>
+                </div>
+
+                <!-- Metric Cards -->
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-icon blue"><i data-lucide="trending-up"></i></div>
+                        <div class="metric-info">
+                            <span>Total Revenue</span>
+                            <h3>$48,550.00</h3>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon green"><i data-lucide="package"></i></div>
+                        <div class="metric-info">
+                            <span>Active Inventory</span>
+                            <h3>1,245 Items</h3>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon orange"><i data-lucide="truck"></i></div>
+                        <div class="metric-info">
+                            <span>Fleet Refills</span>
+                            <h3>32 Pending</h3>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon purple"><i data-lucide="file-check"></i></div>
+                        <div class="metric-info">
+                            <span>Leave Requests</span>
+                            <h3>5 Requests</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Table Section -->
+                <div class="card-table-container">
+                    <div class="table-header">
+                        <h3>Recent Transactions</h3>
+                        <button class="outline-btn"><i data-lucide="download"></i> Export CSV</button>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Module / Type</th>
+                                <th>Description</th>
+                                <th>Status</th>
+                                <th>Date</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#TR-9021</td>
+                                <td>Warehouse</td>
+                                <td>Office Stationery Requisition (HR Dept)</td>
+                                <td><span class="badge success">Approved</span></td>
+                                <td>2026-09-26</td>
+                                <td><button class="action-btn"><i data-lucide="more-horizontal"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>#TR-9020</td>
+                                <td>Fleet Fuel</td>
+                                <td>Vehicle Refill Slip #402 (Viber QR)</td>
+                                <td><span class="badge warning">Pending</span></td>
+                                <td>2026-09-25</td>
+                                <td><button class="action-btn"><i data-lucide="more-horizontal"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
