@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Enterprise Resource Planning (ERP)</title>
+    <!-- Lucide Icons for Professional UI -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <i data-lucide="box"></i>
+                <span>Capital ERP</span>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="menu-item"><a href="index.html"><i data-lucide="layout-dashboard"></i> Dashboard</a></li>
+                <li class="menu-item"><a href="index.html"><i data-lucide="fuel"></i> Fleet & Fuel</a></li>
+                <li class="menu-item"><a href="index.html"><i data-lucide="warehouse"></i> Warehouse</a></li>
+                <li class="menu-item"><a href="index.html"><i data-lucide="file-text"></i> Requisitions</a></li>
+                <li class="menu-item"><a href="index.html"><i data-lucide="shield"></i> Fixed Assets</a></li>
+                <li class="menu-item"><a href="index.html"><i data-lucide="users"></i> HR & Leave</a></li>
+                <li class="menu-item"><a href="index.html"><i data-lucide="bar-chart-3"></i> Reports</a></li>
+                <li class="menu-item active"><a href="settings.html"><i data-lucide="settings"></i> Settings</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Wrapper -->
+        <div class="main-wrapper">
+            <!-- Top Header -->
+            <header class="top-header">
+                <div class="header-search">
+                    <i data-lucide="search"></i>
+                    <input type="text" placeholder="Search settings, users, permissions...">
+                </div>
+                <div class="header-actions">
+                    <button class="icon-btn"><i data-lucide="bell"></i></button>
+                    <div class="user-profile">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100" alt="User">
+                        <span>Admin User</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Settings Content Area -->
+            <main class="content-area">
+                <div class="page-header">
+                    <h1>System Settings & User Permissions</h1>
+                    <button class="primary-btn"><i data-lucide="user-plus"></i> Add New User</button>
+                </div>
+
+                <!-- 1. User Management Table -->
+                <div class="card-table-container">
+                    <div class="table-header">
+                        <h3>Registered Users & Access Control</h3>
+                        <button class="outline-btn"><i data-lucide="download"></i> Export CSV / Excel</button>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>User ID</th>
+                                <th>Name / Username</th>
+                                <th>Department</th>
+                                <th>Role</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#USR-001</td>
+                                <td><strong>Admin User</strong></td>
+                                <td>Digital / IT</td>
+                                <td><span class="badge purple">Super Admin</span></td>
+                                <td><span class="badge success">Active</span></td>
+                                <td>
+                                    <button class="action-btn" title="Edit"><i data-lucide="edit-3" style="width:16px; color:#3b82f6;"></i></button>
+                                    <button class="action-btn" title="Delete"><i data-lucide="trash-2" style="width:16px; color:#ef4444;"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 2. Permission Matrix -->
+                <div class="card-table-container" style="margin-top: 30px;">
+                    <div class="table-header">
+                        <h3>Department & Function Permission Matrix</h3>
+                        <button class="primary-btn" style="padding: 6px 12px; font-size: 0.85rem;">Save Permissions</button>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Department / Module</th>
+                                <th>View</th>
+                                <th>Create</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                                <th>Export</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Warehouse & Inventory</strong></td>
+                                <td><input type="checkbox" checked></td>
+                                <td><input type="checkbox" checked></td>
+                                <td><input type="checkbox" checked></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox" checked></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 3. Audit Logs -->
+                <div class="card-table-container" style="margin-top: 30px;">
+                    <div class="table-header">
+                        <h3>User Login / Logout Activity Logs</h3>
+                        <button class="outline-btn"><i data-lucide="download"></i> Export Logs</button>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Log ID</th>
+                                <th>User Name</th>
+                                <th>IP Address</th>
+                                <th>Login Time</th>
+                                <th>Logout Time</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#LOG-8812</td>
+                                <td>Admin User</td>
+                                <td>192.168.1.55</td>
+                                <td>2026-09-26 08:30:15 AM</td>
+                                <td>- (Online)</td>
+                                <td><span class="badge success">Active</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
+  
