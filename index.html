@@ -6,7 +6,7 @@
     <title>Enterprise Resource Planning (ERP) System</title>
     <!-- Lucide Icons for Professional UI -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -18,10 +18,11 @@
                 <span>Capital ERP</span>
             </div>
             <ul class="sidebar-menu">
-                <li class="menu-item active"><a href="#"><i data-lucide="layout-dashboard"></i> Dashboard</a></li>
+                <li class="menu-item"><a href="#"><i data-lucide="layout-dashboard"></i> Dashboard</a></li>
                 <li class="menu-item"><a href="#"><i data-lucide="fuel"></i> Fleet & Fuel</a></li>
                 <li class="menu-item"><a href="#"><i data-lucide="warehouse"></i> Warehouse</a></li>
-                <li class="menu-item"><a href="#"><i data-lucide="file-text"></i> Requisitions</a></li>
+                <li class="menu-item active"><a href="#"><i data-lucide="file-text"></i> Requisitions</a></li>
+                <li class="menu-item"><a href="#"><i data-lucide="shield"></i> Fixed Assets</a></li>
                 <li class="menu-item"><a href="#"><i data-lucide="users"></i> HR & Leave</a></li>
                 <li class="menu-item"><a href="#"><i data-lucide="bar-chart-3"></i> Reports</a></li>
                 <li class="menu-item"><a href="#"><i data-lucide="settings"></i> Settings</a></li>
@@ -34,7 +35,7 @@
             <header class="top-header">
                 <div class="header-search">
                     <i data-lucide="search"></i>
-                    <input type="text" placeholder="Search modules, orders, items...">
+                    <input type="text" placeholder="Search modules, assets, stationery...">
                 </div>
                 <div class="header-actions">
                     <button class="icon-btn"><i data-lucide="bell"></i></button>
@@ -45,57 +46,108 @@
                 </div>
             </header>
 
-            <!-- Dashboard Content -->
+            <!-- Requisitions Content Area -->
             <main class="content-area">
                 <div class="page-header">
-                    <h1>Dashboard Overview</h1>
-                    <button class="primary-btn"><i data-lucide="plus"></i> Add New Record</button>
+                    <h1>Asset & Stationery Requisitions</h1>
+                    <button class="primary-btn"><i data-lucide="plus"></i> New Requisition</button>
                 </div>
 
-                <!-- Metric Cards -->
-                <div class="metrics-grid">
-                    <div class="metric-card">
-                        <div class="metric-icon blue"><i data-lucide="trending-up"></i></div>
-                        <div class="metric-info">
-                            <span>Total Revenue</span>
-                            <h3>$48,550.00</h3>
+                <!-- Forms Grid Section -->
+                <div class="forms-grid">
+                    <!-- Stationery Requisition Form Card -->
+                    <div class="form-card">
+                        <div class="card-header-flex">
+                            <h3><i data-lucide="file-edit"></i> Stationery Requisition Form</h3>
+                            <span class="badge info">Office Dept</span>
                         </div>
+                        <form class="erp-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Department</label>
+                                    <select class="form-control">
+                                        <option>Digital / IT</option>
+                                        <option>HR Department</option>
+                                        <option>Admin Department</option>
+                                        <option>Warehouse</option>
+                                        <option>Sales</option>
+                                        <option>Accounting</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Required Date</label>
+                                    <input type="date" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Stationery Items & Quantity</label>
+                                <div class="item-row">
+                                    <input type="text" class="form-control" placeholder="Item Name (e.g. A4 Paper, Pen)" value="A4 Paper Ream">
+                                    <input type="number" class="form-control qty-input" value="2">
+                                </div>
+                                <div class="item-row" style="margin-top: 8px;">
+                                    <input type="text" class="form-control" placeholder="Item Name" value="Ballpoint Pen (Box)">
+                                    <input type="number" class="form-control qty-input" value="1">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Remark / Purpose</label>
+                                <textarea class="form-control" rows="2" placeholder="Monthly office supply requirement...">Monthly office supply requirement</textarea>
+                            </div>
+                            <button type="button" class="primary-btn full-width"><i data-lucide="send"></i> Submit Stationery Request</button>
+                        </form>
                     </div>
-                    <div class="metric-card">
-                        <div class="metric-icon green"><i data-lucide="package"></i></div>
-                        <div class="metric-info">
-                            <span>Active Inventory</span>
-                            <h3>1,245 Items</h3>
+
+                    <!-- Fixed Assets Request Form Card -->
+                    <div class="form-card">
+                        <div class="card-header-flex">
+                            <h3><i data-lucide="monitor"></i> Fixed Asset Request Form</h3>
+                            <span class="badge purple">Asset Management</span>
                         </div>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-icon orange"><i data-lucide="truck"></i></div>
-                        <div class="metric-info">
-                            <span>Fleet Refills</span>
-                            <h3>32 Pending</h3>
-                        </div>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-icon purple"><i data-lucide="file-check"></i></div>
-                        <div class="metric-info">
-                            <span>Leave Requests</span>
-                            <h3>5 Requests</h3>
-                        </div>
+                        <form class="erp-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Asset Type</label>
+                                    <select class="form-control">
+                                        <option>IT Hardware (Laptop / Monitor)</option>
+                                        <option>Office Furniture (Desk / Chair)</option>
+                                        <option>Electronics / Equipment</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Priority Level</label>
+                                    <select class="form-control">
+                                        <option>Normal</option>
+                                        <option>Urgent</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Asset Description / Specification</label>
+                                <input type="text" class="form-control" placeholder="e.g. Dell Office Laptop / Ergonomic Chair" value="Ergonomic Office Chair">
+                            </div>
+                            <div class="form-group">
+                                <label>Justification / Reason</label>
+                                <textarea class="form-control" rows="2" placeholder="Reason for asset request...">Replacement for damaged workstation chair</textarea>
+                            </div>
+                            <button type="button" class="primary-btn full-width bg-purple"><i data-lucide="check-circle"></i> Submit Asset Request</button>
+                        </form>
                     </div>
                 </div>
 
-                <!-- Data Table Section -->
-                <div class="card-table-container">
+                <!-- Requisitions Data Table -->
+                <div class="card-table-container" style="margin-top: 30px;">
                     <div class="table-header">
-                        <h3>Recent Transactions</h3>
+                        <h3>Recent Requisition Logs</h3>
                         <button class="outline-btn"><i data-lucide="download"></i> Export CSV</button>
                     </div>
                     <table>
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Module / Type</th>
-                                <th>Description</th>
+                                <th>Req ID</th>
+                                <th>Category</th>
+                                <th>Department</th>
+                                <th>Details</th>
                                 <th>Status</th>
                                 <th>Date</th>
                                 <th>Action</th>
@@ -103,17 +155,19 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>#TR-9021</td>
-                                <td>Warehouse</td>
-                                <td>Office Stationery Requisition (HR Dept)</td>
+                                <td>#REQ-5012</td>
+                                <td>Stationery</td>
+                                <td>HR Department</td>
+                                <td>A4 Paper (2 Reams), Pens (1 Box)</td>
                                 <td><span class="badge success">Approved</span></td>
                                 <td>2026-09-26</td>
                                 <td><button class="action-btn"><i data-lucide="more-horizontal"></i></button></td>
                             </tr>
                             <tr>
-                                <td>#TR-9020</td>
-                                <td>Fleet Fuel</td>
-                                <td>Vehicle Refill Slip #402 (Viber QR)</td>
+                                <td>#REQ-5011</td>
+                                <td>Fixed Asset</td>
+                                <td>Digital / IT</td>
+                                <td>Ergonomic Office Chair</td>
                                 <td><span class="badge warning">Pending</span></td>
                                 <td>2026-09-25</td>
                                 <td><button class="action-btn"><i data-lucide="more-horizontal"></i></button></td>
