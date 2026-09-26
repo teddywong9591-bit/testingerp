@@ -179,6 +179,160 @@
         </div>
     </div>
 
+    <!-- Settings Content Area -->
+<main class="content-area">
+    <div class="page-header">
+        <h1>System Settings & User Permissions</h1>
+        <button class="primary-btn" onclick="openAddUserModal()"><i data-lucide="user-plus"></i> Add New User</button>
+    </div>
+
+    <!-- Settings Navigation Tabs -->
+    <div class="settings-tabs">
+        <button class="tab-btn active">User Management</button>
+        <button class="tab-btn">Role & Department Permissions</button>
+        <button class="tab-btn">Login/Logout Audit Logs</button>
+    </div>
+
+    <!-- 1. User Management Table Section -->
+    <div class="card-table-container">
+        <div class="table-header">
+            <h3>Registered Users & Access Control</h3>
+            <div class="table-actions">
+                <button class="outline-btn"><i data-lucide="download"></i> Export CSV / Excel</button>
+            </div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>User ID</th>
+                    <th>Name / Username</th>
+                    <th>Department</th>
+                    <th>Assigned Role</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>#USR-001</td>
+                    <td><strong>Admin User</strong> (admin@capital.com)</td>
+                    <td>Digital / IT</td>
+                    <td><span class="badge purple">Super Admin</span></td>
+                    <td><span class="badge success">Active</span></td>
+                    <td>
+                        <button class="action-btn" title="Edit"><i data-lucide="edit-3" style="width:16px; color:#3b82f6;"></i></button>
+                        <button class="action-btn" title="Delete"><i data-lucide="trash-2" style="width:16px; color:#ef4444;"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>#USR-002</td>
+                    <td><strong>Aung Ko Ko</strong> (aungkoko@capital.com)</td>
+                    <td>Warehouse</td>
+                    <td><span class="badge info">Warehouse Officer</span></td>
+                    <td><span class="badge success">Active</span></td>
+                    <td>
+                        <button class="action-btn" title="Edit"><i data-lucide="edit-3" style="width:16px; color:#3b82f6;"></i></button>
+                        <button class="action-btn" title="Delete"><i data-lucide="trash-2" style="width:16px; color:#ef4444;"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 2. Department & Function Permission Matrix Section -->
+    <div class="card-table-container" style="margin-top: 30px;">
+        <div class="table-header">
+            <h3>Department & Function Permission Matrix (User-level Control)</h3>
+            <button class="primary-btn" style="padding: 6px 12px; font-size: 0.85rem;">Save Permissions</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Department / Module</th>
+                    <th>View (Read)</th>
+                    <th>Create (Add)</th>
+                    <th>Edit (Update)</th>
+                    <th>Delete</th>
+                    <th>Export Data (Excel/CSV)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Fleet & Fuel Management</strong></td>
+                    <td><input type="checkbox" checked></td>
+                    <td><input type="checkbox" checked></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox" checked></td>
+                </tr>
+                <tr>
+                    <td><strong>Warehouse & Inventory</strong></td>
+                    <td><input type="checkbox" checked></td>
+                    <td><input type="checkbox" checked></td>
+                    <td><input type="checkbox" checked></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox" checked></td>
+                </tr>
+                <tr>
+                    <td><strong>Stationery & Fixed Assets</strong></td>
+                    <td><input type="checkbox" checked></td>
+                    <td><input type="checkbox" checked></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td><strong>HR & Leave Requisitions</strong></td>
+                    <td><input type="checkbox" checked></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 3. Login / Logout Activity Logs Section -->
+    <div class="card-table-container" style="margin-top: 30px;">
+        <div class="table-header">
+            <h3>User Login / Logout Activity Logs</h3>
+            <button class="outline-btn"><i data-lucide="download"></i> Export Logs</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Log ID</th>
+                    <th>User Name</th>
+                    <th>IP Address</th>
+                    <th>Login Time</th>
+                    <th>Logout Time</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>#LOG-8812</td>
+                    <td>Admin User</td>
+                    <td>192.168.1.55</td>
+                    <td>2026-09-26 08:30:15 AM</td>
+                    <td>- (Online)</td>
+                    <td><span class="badge success">Active Session</span></td>
+                </tr>
+                <tr>
+                    <td>#LOG-8811</td>
+                    <td>Aung Ko Ko</td>
+                    <td>192.168.1.42</td>
+                    <td>2026-09-26 09:00:10 AM</td>
+                    <td>2026-09-26 05:15:22 PM</td>
+                    <td><span class="badge warning">Logged Out</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+    
+
     <script>
         // Initialize Lucide Icons
         lucide.createIcons();
