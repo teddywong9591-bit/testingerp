@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enterprise Resource Planning (ERP) System</title>
+    <title>Asset & Stationery Requisitions - Capital ERP</title>
     <!-- Lucide Icons for Professional UI -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="style.css">
@@ -18,14 +18,15 @@
                 <span>Capital ERP</span>
             </div>
             <ul class="sidebar-menu">
-                <li class="menu-item" onclick="switchSection('dashboard', this)"><a href="#"><i data-lucide="layout-dashboard"></i> Dashboard</a></li>
-                <li class="menu-item" onclick="switchSection('fleet', this)"><a href="#"><i data-lucide="fuel"></i> Fleet & Fuel</a></li>
-                <li class="menu-item" onclick="switchSection('warehouse', this)"><a href="#"><i data-lucide="warehouse"></i> Warehouse</a></li>
-                <li class="menu-item active" onclick="switchSection('requisitions', this)"><a href="#"><i data-lucide="file-text"></i> Requisitions</a></li>
-                <li class="menu-item" onclick="switchSection('assets', this)"><a href="#"><i data-lucide="shield"></i> Fixed Assets</a></li>
-                <li class="menu-item" onclick="switchSection('hr', this)"><a href="#"><i data-lucide="users"></i> HR & Leave</a></li>
-                <li class="menu-item" onclick="switchSection('reports', this)"><a href="#"><i data-lucide="bar-chart-3"></i> Reports</a></li>
-                <li class="menu-item" onclick="switchSection('settings', this)"><a href="#"><i data-lucide="settings"></i> Settings</a></li>
+                <li class="menu-item"><a href="#"><i data-lucide="layout-dashboard"></i> Dashboard</a></li>
+                <li class="menu-item"><a href="#"><i data-lucide="fuel"></i> Fleet & Fuel</a></li>
+                <li class="menu-item"><a href="#"><i data-lucide="warehouse"></i> Warehouse</a></li>
+                <li class="menu-item active"><a href="index.html"><i data-lucide="file-text"></i> Requisitions</a></li>
+                <li class="menu-item"><a href="#"><i data-lucide="shield"></i> Fixed Assets</a></li>
+                <li class="menu-item"><a href="#"><i data-lucide="users"></i> HR & Leave</a></li>
+                <li class="menu-item"><a href="#"><i data-lucide="bar-chart-3"></i> Reports</a></li>
+                <!-- Settings ကို သီးသန့်ဖိုင်သို့ လင့်ချိတ်ထားသည် -->
+                <li class="menu-item"><a href="settings.html"><i data-lucide="settings"></i> Settings</a></li>
             </ul>
         </aside>
 
@@ -46,8 +47,8 @@
                 </div>
             </header>
 
-            <!-- 1. Requisitions Section (Default Active) -->
-            <main id="requisitions-section" class="content-area erp-section">
+            <!-- Requisitions Section (Main Content) -->
+            <main class="content-area">
                 <div class="page-header">
                     <h1>Asset & Stationery Requisitions</h1>
                     <button class="primary-btn"><i data-lucide="plus"></i> New Requisition</button>
@@ -166,136 +167,12 @@
                     </table>
                 </div>
             </main>
-
-            <!-- 2. Settings Section (Hidden by default) -->
-            <main id="settings-section" class="content-area erp-section" style="display: none;">
-                <div class="page-header">
-                    <h1>System Settings & User Permissions</h1>
-                    <button class="primary-btn"><i data-lucide="user-plus"></i> Add New User</button>
-                </div>
-
-                <!-- User Management Table -->
-                <div class="card-table-container">
-                    <div class="table-header">
-                        <h3>Registered Users & Access Control</h3>
-                        <button class="outline-btn"><i data-lucide="download"></i> Export CSV / Excel</button>
-                    </div>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>User ID</th>
-                                <th>Name / Username</th>
-                                <th>Department</th>
-                                <th>Role</th>
-                                <th>Status</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>#USR-001</td>
-                                <td><strong>Admin User</strong></td>
-                                <td>Digital / IT</td>
-                                <td><span class="badge purple">Super Admin</span></td>
-                                <td><span class="badge success">Active</span></td>
-                                <td>
-                                    <button class="action-btn" title="Edit"><i data-lucide="edit-3" style="width:16px; color:#3b82f6;"></i></button>
-                                    <button class="action-btn" title="Delete"><i data-lucide="trash-2" style="width:16px; color:#ef4444;"></i></button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- Permission Matrix -->
-                <div class="card-table-container" style="margin-top: 30px;">
-                    <div class="table-header">
-                        <h3>Department & Function Permission Matrix</h3>
-                        <button class="primary-btn" style="padding: 6px 12px; font-size: 0.85rem;">Save Permissions</button>
-                    </div>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Department / Module</th>
-                                <th>View</th>
-                                <th>Create</th>
-                                <th>Edit</th>
-                                <th>Delete</th>
-                                <th>Export</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Warehouse & Inventory</strong></td>
-                                <td><input type="checkbox" checked></td>
-                                <td><input type="checkbox" checked></td>
-                                <td><input type="checkbox" checked></td>
-                                <td><input type="checkbox"></td>
-                                <td><input type="checkbox" checked></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- Audit Logs -->
-                <div class="card-table-container" style="margin-top: 30px;">
-                    <div class="table-header">
-                        <h3>User Login / Logout Activity Logs</h3>
-                        <button class="outline-btn"><i data-lucide="download"></i> Export Logs</button>
-                    </div>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Log ID</th>
-                                <th>User Name</th>
-                                <th>IP Address</th>
-                                <th>Login Time</th>
-                                <th>Logout Time</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>#LOG-8812</td>
-                                <td>Admin User</td>
-                                <td>192.168.1.55</td>
-                                <td>2026-09-26 08:30:15 AM</td>
-                                <td>- (Online)</td>
-                                <td><span class="badge success">Active</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </main>
-
         </div>
     </div>
 
-    <!-- JavaScript for View Switching -->
+    <!-- Initialize Lucide Icons -->
     <script>
-        // Initialize Lucide Icons
         lucide.createIcons();
-
-        function switchSection(sectionName, element) {
-            // Hide all sections
-            const sections = document.querySelectorAll('.erp-section');
-            sections.forEach(sec => sec.style.display = 'none');
-
-            // Show target section if exists (For now defaulting Requisitions & Settings)
-            if(sectionName === 'settings') {
-                document.getElementById('settings-section').style.display = 'block';
-            } else {
-                document.getElementById('requisitions-section').style.display = 'block';
-            }
-
-            // Update active menu class
-            const menuItems = document.querySelectorAll('.sidebar-menu .menu-item');
-            menuItems.forEach(item => item.classList.remove('active'));
-            element.classList.add('active');
-
-            // Re-initialize icons for newly displayed elements
-            lucide.createIcons();
-        }
     </script>
 </body>
 </html>
